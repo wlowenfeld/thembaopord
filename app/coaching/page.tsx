@@ -61,58 +61,33 @@ export default function CoachingPage() {
 
       {/* Pricing */}
       <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-navy mb-3 text-center">Coaching Packages</h2>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy mb-3 text-center">Coaching Options</h2>
           <p className="text-slate-dark text-center mb-10 max-w-2xl mx-auto">
-            Every package includes unlimited brainstorming, resume review, essay editing
-            with unlimited revisions, and email support through your admissions decisions.
+            One flat price for your entire admissions cycle. No per-school fees,
+            no nickel-and-diming. The work you do to build a great application
+            applies everywhere you apply.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Single School */}
-            <div className="border border-gray-200 rounded-lg p-6 flex flex-col">
-              <h3 className="font-semibold text-navy text-lg">Single School</h3>
-              <p className="text-3xl font-bold text-navy mt-2 mb-1">$3,800</p>
-              <p className="text-sm text-slate mb-6">One target school</p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  "Full application strategy",
-                  "Resume and essay review",
-                  "Unlimited revisions",
-                  "6 hours 1-on-1 consulting",
-                  "1 interview prep session",
-                  "Email support through decision",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-slate-dark">
-                    <span className="text-gold font-bold mt-0.5">&#10003;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="#strategy-call"
-                className="block text-center px-6 py-3 border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold rounded-md transition-colors"
-              >
-                Get Started
-              </Link>
-            </div>
-
-            {/* Three School - Featured */}
-            <div className="border-2 border-gold rounded-lg p-6 flex flex-col relative">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {/* Comprehensive */}
+            <div className="border-2 border-gold rounded-lg p-8 flex flex-col relative">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                Most Popular
+                Full Cycle
               </span>
-              <h3 className="font-semibold text-navy text-lg">Three Schools</h3>
-              <p className="text-3xl font-bold text-navy mt-2 mb-1">$6,000</p>
-              <p className="text-sm text-slate mb-6">Three target schools</p>
+              <h3 className="font-semibold text-navy text-lg">Comprehensive Coaching</h3>
+              <p className="text-3xl font-bold text-navy mt-2 mb-1">$5,000</p>
+              <p className="text-sm text-slate mb-6">Your entire admissions cycle, up to 5 schools</p>
               <ul className="space-y-3 mb-8 flex-1">
                 {[
-                  "Everything in Single School",
-                  "School selection strategy",
-                  "Applications for 3 schools",
-                  "10 hours 1-on-1 consulting",
-                  "2 interview prep sessions",
-                  "Email support through decisions",
+                  "School selection strategy and target list",
+                  "Application narrative and positioning",
+                  "Resume review and optimization",
+                  "Essay editing with unlimited revisions",
+                  "Interview preparation and mock interviews",
+                  "Funding strategy (GI Bill, Yellow Ribbon, scholarships)",
+                  "Unlimited email support through decisions",
+                  "Covers up to 5 school applications",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-slate-dark">
                     <span className="text-gold font-bold mt-0.5">&#10003;</span>
@@ -129,8 +104,8 @@ export default function CoachingPage() {
             </div>
 
             {/* Hourly */}
-            <div className="border border-gray-200 rounded-lg p-6 flex flex-col">
-              <h3 className="font-semibold text-navy text-lg">Hourly</h3>
+            <div className="border border-gray-200 rounded-lg p-8 flex flex-col">
+              <h3 className="font-semibold text-navy text-lg">Hourly Consulting</h3>
               <p className="text-3xl font-bold text-navy mt-2 mb-1">$300<span className="text-base font-normal text-slate">/hr</span></p>
               <p className="text-sm text-slate mb-6">2-hour minimum</p>
               <ul className="space-y-3 mb-8 flex-1">
@@ -140,7 +115,8 @@ export default function CoachingPage() {
                   "Interview preparation",
                   "Resume optimization",
                   "School selection guidance",
-                  "No ongoing commitment",
+                  "Application strategy session",
+                  "No ongoing commitment required",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-slate-dark">
                     <span className="text-gold font-bold mt-0.5">&#10003;</span>
@@ -164,11 +140,11 @@ export default function CoachingPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <p className="text-gold font-semibold text-sm uppercase tracking-wider mb-3">Limited Launch Offer</p>
           <h2 className="text-2xl font-bold text-white mb-4">
-            First 5 clients: Three-School Package for $2,500
+            First 5 clients: Comprehensive Coaching for $2,500
           </h2>
           <p className="text-gray-300 mb-6">
             I&apos;m building something new, and I want to get it right. The first five
-            coaching clients get the Three-School Package at a significant discount
+            coaching clients get the full Comprehensive Coaching package at half price
             in exchange for a detailed, honest testimonial after your admissions cycle.
           </p>
           <Link
@@ -217,8 +193,12 @@ export default function CoachingPage() {
                 a: "Ideally, 6-8 months before your target application deadline. That gives us time to build your school list, develop your narrative, and draft strong applications without rushing. But if you're closer to a deadline, we can work on an accelerated timeline.",
               },
               {
+                q: "Why one flat price instead of per-school?",
+                a: "Because the real work is building your story, sharpening your resume, and developing your application strategy. Once that foundation is set, adapting it for additional schools is straightforward. Charging per school doesn't reflect how the work actually happens, and I don't want you making school list decisions based on coaching fees.",
+              },
+              {
                 q: "Do you only work with military officers?",
-                a: "My core focus is U.S. military officers, but I've also worked with allied and international military professionals. If you have a military background and want to pursue an MBA in the U.S., let's talk.",
+                a: "Yes. Military officers are my focus because translating military experience for civilian admissions committees is a specific skill. I understand the career paths, the language, and the transition challenges in a way that generalist consultants don't.",
               },
               {
                 q: "What if I'm not sure I even want an MBA?",
@@ -230,7 +210,7 @@ export default function CoachingPage() {
               },
               {
                 q: "What's your success rate?",
-                a: "I'm transparent about this: I'm launching my coaching practice. I don't have a public track record yet, which is exactly why the first five clients get a significant discount. What I do have is firsthand experience getting into a top program as a military officer and the deep knowledge that comes from going through it.",
+                a: "I'm transparent about this: I'm launching my coaching practice. I don't have a public track record yet, which is exactly why the first five clients get a significant discount. What I do have is firsthand experience getting into a top program as a military officer and the deep knowledge that comes from writing the book on it.",
               },
             ].map((item) => (
               <div key={item.q}>

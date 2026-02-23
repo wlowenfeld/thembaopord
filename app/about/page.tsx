@@ -26,10 +26,10 @@ export default function AboutPage() {
             <p>
               I spent years in the military before deciding to pursue an MBA. When I started
               looking into business school, I realized there was almost nothing written
-              specifically for people like me. Plenty of general admissions guides, plenty
-              of veteran resource pages buried on school websites, but nothing that actually
-              walked a military officer through the entire process from the perspective of
-              someone who&apos;d done it.
+              specifically for people like me. Plenty of general admissions guides existed, and
+              plenty of veteran resource pages were buried on school websites, but nothing
+              actually walked a military officer through the entire process from the perspective
+              of someone who&apos;d done it.
             </p>
             <p>
               So I figured it out the hard way. I got into NYU Stern and graduated in 2019.
@@ -50,6 +50,10 @@ export default function AboutPage() {
               that&apos;s what I do.
             </p>
           </div>
+
+          {/* TODO for Wes: Add specific details — branch, years of service, rank,
+              roles/deployments you're comfortable sharing, and post-MBA career path.
+              The current version is deliberately vague so you can fill in the specifics. */}
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link

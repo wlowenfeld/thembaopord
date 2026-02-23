@@ -60,9 +60,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-white/10 text-center">
+        <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} The MBA OPORD. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="text-xs text-gray-400 hover:text-gray-300 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-xs text-gray-400 hover:text-gray-300 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-6 text-center">
+          <p className="text-xs text-gray-500">
+            Not affiliated with the U.S. Department of Defense or any branch of the U.S. military.
           </p>
         </div>
       </div>
