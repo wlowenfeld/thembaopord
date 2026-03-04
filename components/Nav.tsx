@@ -1,13 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-navy font-bold text-lg tracking-tight">
@@ -30,7 +43,7 @@ export default function Nav() {
             </Link>
             <Link
               href="/coaching#strategy-call"
-              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gold hover:bg-gold-dark rounded-md transition-colors"
+              className="btn-shine inline-flex items-center px-5 py-2 text-sm font-semibold text-white bg-gold hover:bg-gold-dark rounded-lg transition-colors"
             >
               Free Strategy Call
             </Link>
@@ -55,7 +68,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-white border-b border-gray-100 pb-4">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-100 pb-4">
           <div className="px-4 space-y-3">
             <Link href="/book" onClick={() => setOpen(false)} className="block text-sm font-medium text-slate-dark hover:text-navy">
               The Book
@@ -72,7 +85,7 @@ export default function Nav() {
             <Link
               href="/coaching#strategy-call"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-gold hover:bg-gold-dark rounded-md transition-colors"
+              className="inline-flex items-center px-5 py-2 text-sm font-semibold text-white bg-gold hover:bg-gold-dark rounded-lg transition-colors"
             >
               Free Strategy Call
             </Link>
