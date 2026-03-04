@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useId } from 'react';
 
 interface BookCoverProps {
   className?: string;
@@ -9,7 +11,9 @@ interface BookCoverProps {
  * Inspired by Atomic Habits / Dare to Lead — massive title dominates,
  * ultra-clean negative space, confident and modern. The title IS the design.
  */
-export default function BookCoverA({ className = '' }: BookCoverProps) {
+export default function BookCover({ className = '' }: BookCoverProps) {
+  const uid = useId().replace(/:/g, '');
+
   return (
     <div className={className}>
       <svg
@@ -19,11 +23,11 @@ export default function BookCoverA({ className = '' }: BookCoverProps) {
         style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
       >
         <defs>
-          <linearGradient id="a-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+          <linearGradient id={`bg-${uid}`} x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#0D1525" />
             <stop offset="100%" stopColor="#1B2A4A" />
           </linearGradient>
-          <linearGradient id="a-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id={`gold-${uid}`} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#E8C547" />
             <stop offset="50%" stopColor="#C4973B" />
             <stop offset="100%" stopColor="#D4A84B" />
@@ -31,7 +35,7 @@ export default function BookCoverA({ className = '' }: BookCoverProps) {
         </defs>
 
         {/* Background */}
-        <rect width="600" height="800" fill="url(#a-bg)" />
+        <rect width="600" height="800" fill={`url(#bg-${uid})`} />
 
         {/* Top category label */}
         <text
@@ -51,7 +55,7 @@ export default function BookCoverA({ className = '' }: BookCoverProps) {
 
         {/* THE — large, white, tracking wide */}
         <text
-          x="300" y="255"
+          x="300" y="240"
           fontSize="100"
           fontFamily="Georgia, 'Times New Roman', serif"
           fontWeight="700"
@@ -64,11 +68,11 @@ export default function BookCoverA({ className = '' }: BookCoverProps) {
 
         {/* MBA — massive, gold gradient, tight tracking */}
         <text
-          x="300" y="370"
+          x="300" y="380"
           fontSize="155"
           fontFamily="Georgia, 'Times New Roman', serif"
           fontWeight="900"
-          fill="url(#a-gold)"
+          fill={`url(#gold-${uid})`}
           textAnchor="middle"
           letterSpacing="-3"
         >
@@ -77,7 +81,7 @@ export default function BookCoverA({ className = '' }: BookCoverProps) {
 
         {/* OPORD — massive, white, tight tracking */}
         <text
-          x="300" y="490"
+          x="300" y="510"
           fontSize="130"
           fontFamily="Georgia, 'Times New Roman', serif"
           fontWeight="900"
@@ -90,7 +94,7 @@ export default function BookCoverA({ className = '' }: BookCoverProps) {
 
         {/* Subtitle — clean, spaced */}
         <text
-          x="300" y="560"
+          x="300" y="578"
           fontSize="16"
           fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
           fontWeight="400"
@@ -102,7 +106,7 @@ export default function BookCoverA({ className = '' }: BookCoverProps) {
         </text>
 
         {/* Gold bar accent — thick and bold */}
-        <rect x="250" y="590" width="100" height="4" rx="2" fill="#C4973B" />
+        <rect x="250" y="608" width="100" height="4" rx="2" fill="#C4973B" />
 
         {/* Author */}
         <text

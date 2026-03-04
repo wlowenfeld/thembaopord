@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { markdownToHtml } from "@/lib/markdown";
 import EmailCapture from "@/components/EmailCapture";
 import BookCTA from "@/components/BookCTA";
 
@@ -49,50 +50,7 @@ export default async function BlogPost({ params }: Props) {
     );
   }
 
-  // Simple MDX rendering: split content into paragraphs and render
-  const renderContent = (content: string) => {
-    const lines = content.split("\n");
-    const elements: React.ReactNode[] = [];
-    let i = 0;
-
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed) { i++; continue; }
-
-      if (trimmed.startsWith("## ")) {
-        elements.push(<h2 key={i}>{trimmed.slice(3)}</h2>);
-      } else if (trimmed.startsWith("### ")) {
-        elements.push(<h3 key={i}>{trimmed.slice(4)}</h3>);
-      } else if (trimmed.startsWith("- ")) {
-        // Collect consecutive list items
-        const items: string[] = [trimmed.slice(2)];
-        const startIdx = lines.indexOf(line);
-        let j = startIdx + 1;
-        while (j < lines.length && lines[j].trim().startsWith("- ")) {
-          items.push(lines[j].trim().slice(2));
-          j++;
-        }
-        elements.push(
-          <ul key={i}>
-            {items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        );
-      } else if (trimmed.startsWith("> ")) {
-        elements.push(<blockquote key={i}>{trimmed.slice(2)}</blockquote>);
-      } else if (!trimmed.startsWith("- ") || !lines[lines.indexOf(line) - 1]?.trim().startsWith("- ")) {
-        // Only render as paragraph if not a continuation list item
-        if (trimmed.startsWith("**") && trimmed.endsWith("**")) {
-          elements.push(<p key={i}><strong>{trimmed.slice(2, -2)}</strong></p>);
-        } else {
-          elements.push(<p key={i}>{trimmed}</p>);
-        }
-      }
-      i++;
-    }
-    return elements;
-  };
+  const html = markdownToHtml(post.content);
 
   const allPosts = getAllPosts();
   const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
@@ -126,9 +84,10 @@ export default async function BlogPost({ params }: Props) {
           </div>
 
           {/* Content */}
-          <div className="prose max-w-none">
-            {renderContent(post.content)}
-          </div>
+          <div
+            className="prose max-w-none"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
 
           {/* Inline CTA */}
           <div className="mt-12">

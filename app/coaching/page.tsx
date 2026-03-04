@@ -245,7 +245,7 @@ export default function CoachingPage() {
               },
               {
                 q: "What's your success rate?",
-                a: "I\u2019m transparent about this: I\u2019m launching my coaching practice. I don\u2019t have a public track record yet, which is exactly why the first five clients get a significant discount. What I do have is firsthand experience getting into a top program as a military officer and the deep knowledge that comes from writing the book on it.",
+                a: "I\u2019m transparent about this: I\u2019m building my coaching practice. What I bring is firsthand experience getting into a top-10 program as a military officer, the deep knowledge that comes from writing the book on the process, and the ability to give you more focused attention than a high-volume consultant ever will.",
               },
             ].map((item, i) => (
               <AnimateIn key={item.q} delay={i * 60}>

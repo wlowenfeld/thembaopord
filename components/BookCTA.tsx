@@ -34,16 +34,16 @@ export default function BookCTA({ variant = "full" }: BookCTAProps) {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/book"
+            href="/coaching#strategy-call"
             className="btn-shine inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-semibold rounded-lg transition-colors shadow-lg shadow-gold/20"
           >
-            Get the Book
+            Book a Free Strategy Call
           </Link>
           <Link
-            href="/coaching#strategy-call"
+            href="/book"
             className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white hover:bg-white/10 font-semibold rounded-lg transition-all"
           >
-            Book a Free Call
+            Get the Book
           </Link>
         </div>
       </div>

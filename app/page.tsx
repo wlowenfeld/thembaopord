@@ -40,21 +40,34 @@ export default function Home() {
               <AnimateIn delay={300}>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/book"
+                    href="/coaching#strategy-call"
                     className="btn-shine inline-flex items-center justify-center px-8 py-4 bg-gold hover:bg-gold-dark text-white font-semibold rounded-lg transition-colors text-center shadow-lg shadow-black/20"
+                  >
+                    Book a Free Strategy Call
+                  </Link>
+                  <Link
+                    href="/book"
+                    className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white hover:bg-white/10 font-semibold rounded-lg transition-all text-center"
                   >
                     Get the Playbook
                   </Link>
-                  <Link
-                    href="/coaching#strategy-call"
-                    className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white hover:bg-white/10 font-semibold rounded-lg transition-all text-center"
-                  >
-                    Free Strategy Call
-                  </Link>
                 </div>
-                <p className="text-gray-500 text-xs mt-4">
-                  Written by a military veteran &amp; NYU Stern MBA &apos;19 grad
-                </p>
+                {/* Trust signals */}
+                <div className="flex items-center gap-4 mt-8">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                      <span className="text-gold text-[10px] font-bold">&#9733;</span>
+                    </div>
+                    <span className="text-gray-300 text-xs font-medium">NYU Stern MBA &apos;19</span>
+                  </div>
+                  <span className="text-white/20">|</span>
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                      <span className="text-gold text-[10px] font-bold">&#9733;</span>
+                    </div>
+                    <span className="text-gray-300 text-xs font-medium">U.S. Army Veteran</span>
+                  </div>
+                </div>
               </AnimateIn>
             </div>
             <div className="md:col-span-2 hidden md:block">
@@ -146,9 +159,22 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <AnimateIn direction="left">
-              <div className="relative max-w-[280px] mx-auto">
-                <div className="absolute -inset-6 bg-gradient-to-br from-navy/5 to-gold/5 rounded-2xl" />
-                <BookCover className="relative rounded-xl shadow-2xl" />
+              <div className="space-y-3">
+                {[
+                  { num: "01", title: "The Decision Point", desc: "Is an MBA right for you?" },
+                  { num: "02", title: "Building Your Narrative", desc: "Translating military experience" },
+                  { num: "03", title: "The Application", desc: "Essays, recs, and tactical details" },
+                  { num: "04", title: "Funding the Mission", desc: "GI Bill, Yellow Ribbon, scholarships" },
+                  { num: "05", title: "Thriving in B-School", desc: "What nobody tells you about day one" },
+                ].map((ch) => (
+                  <div key={ch.num} className="flex items-center gap-4 bg-cream rounded-lg p-4 group hover:bg-gold/5 transition-colors">
+                    <span className="text-gold text-xs font-bold tracking-widest shrink-0">{ch.num}</span>
+                    <div>
+                      <p className="text-navy font-semibold text-sm">{ch.title}</p>
+                      <p className="text-slate text-xs">{ch.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </AnimateIn>
             <AnimateIn direction="right">
@@ -161,27 +187,11 @@ export default function Home() {
                   Laid out in the five-paragraph operations order format you already know.
                   From deciding whether an MBA is right for you to thriving once you get there.
                 </p>
-                <div className="space-y-4 mb-10">
-                  {[
-                    "How to choose the right program for your goals and family",
-                    "Translating military experience into a winning application",
-                    "Funding strategies: GI Bill, Yellow Ribbon, and scholarships",
-                    "What business school is actually like for a military officer",
-                    "Recruiting, networking, and career transition planning",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <span className="text-gold text-xs font-bold">&#10003;</span>
-                      </div>
-                      <span className="text-sm text-slate-dark leading-relaxed">{item}</span>
-                    </div>
-                  ))}
-                </div>
                 <Link
                   href="/book"
                   className="btn-shine inline-flex items-center justify-center px-8 py-3.5 bg-gold hover:bg-gold-dark text-white font-semibold rounded-lg transition-colors shadow-lg shadow-gold/15"
                 >
-                  Learn More
+                  Get the Book
                 </Link>
               </div>
             </AnimateIn>
@@ -248,7 +258,7 @@ export default function Home() {
               <div className="flex items-end justify-between mb-12">
                 <div>
                   <p className="text-gold font-semibold text-xs uppercase tracking-[0.2em] mb-3">From the Blog</p>
-                  <h2 className="text-3xl font-bold text-navy">Latest thinking</h2>
+                  <h2 className="text-3xl font-bold text-navy">Intel from the field</h2>
                 </div>
                 <Link
                   href="/blog"
