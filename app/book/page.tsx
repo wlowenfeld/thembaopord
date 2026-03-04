@@ -74,6 +74,21 @@ export default function BookPage() {
                 </div>
               </div>
 
+              {/* Free resource: Assessment */}
+              <div className="bg-gold/10 border-l-4 border-gold rounded-r-lg p-6 mb-10">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gold mb-2">Free Resource</p>
+                <h3 className="text-lg font-semibold text-navy mb-2">The Decision Point Assessment</h3>
+                <p className="text-sm text-slate-dark mb-4">
+                  Answer eight honest questions before you commit. This free assessment helps you determine if you&apos;re actually ready for an MBA right now.
+                </p>
+                <Link
+                  href="/blog/decision-point-assessment-checklist"
+                  className="inline-flex items-center text-sm font-semibold text-gold-dark hover:text-gold transition-colors"
+                >
+                  Take the Assessment &rarr;
+                </Link>
+              </div>
+
               {/* Chapter list */}
               <h2 className="text-2xl font-bold text-navy mb-6">What&apos;s Inside</h2>
               <div className="space-y-4">

@@ -91,6 +91,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Free Resource: Decision Point Assessment */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-navy to-navy-dark rounded-lg p-8 sm:p-12 text-center">
+              <p className="text-gold text-xs font-semibold uppercase tracking-wider mb-4">Free Resource</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                Are You Actually Ready for an MBA?
+              </h2>
+              <p className="text-gray-200 leading-relaxed mb-8">
+                Answer eight honest questions before you commit to applications. This free assessment tells you whether now is the right time and what gaps you need to fill first.
+              </p>
+              <Link
+                href="/blog/decision-point-assessment-checklist"
+                className="inline-flex items-center justify-center px-8 py-3.5 bg-gold hover:bg-gold-dark text-white font-semibold rounded-md transition-colors"
+              >
+                Take the Assessment
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Book preview */}
       <section className="py-20 bg-cream">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
