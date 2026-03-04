@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import BookCover from "@/components/BookCover";
 
 export const metadata: Metadata = {
   title: "The Book",
@@ -30,13 +31,8 @@ export default function BookPage() {
           <div className="grid md:grid-cols-5 gap-10 items-start">
             {/* Book cover */}
             <div className="md:col-span-2">
-              <div className="bg-navy rounded-lg shadow-xl aspect-[3/4] flex flex-col items-center justify-center p-8 text-center sticky top-24">
-                <p className="text-gold text-xs font-semibold uppercase tracking-widest mb-4">
-                  The Unofficial Military Officer&apos;s Guide
-                </p>
-                <h2 className="text-white text-2xl font-bold leading-tight mb-2">THE MBA<br />OPORD</h2>
-                <div className="w-12 h-0.5 bg-gold my-4" />
-                <p className="text-gray-300 text-sm">Wes Lowenfeld</p>
+              <div className="sticky top-24">
+                <BookCover className="rounded-lg shadow-2xl shadow-navy/30" />
               </div>
             </div>
 
