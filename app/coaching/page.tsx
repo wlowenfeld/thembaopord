@@ -162,25 +162,24 @@ export default function CoachingPage() {
         </div>
       </section>
 
-      {/* Launch offer */}
+      {/* Availability */}
       <section className="py-16 bg-navy relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}} />
         <div className="relative max-w-3xl mx-auto px-4 text-center">
           <AnimateIn>
-            <p className="text-gold font-bold text-xs uppercase tracking-[0.2em] mb-4">Limited Launch Offer</p>
+            <p className="text-gold font-bold text-xs uppercase tracking-[0.2em] mb-4">Limited Availability</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              First 5 clients: Comprehensive Coaching for $2,499
+              Taking on a small number of clients for the 2026&ndash;2027 admissions cycle.
             </h2>
             <p className="text-gray-300 leading-relaxed mb-8 max-w-xl mx-auto">
-              I&apos;m building something new and I want to get it right. The first five
-              coaching clients get the full package at half price
-              in exchange for a detailed, honest testimonial after your admissions cycle.
+              I keep my roster small so every client gets real attention, not a template.
+              If you&apos;re targeting R1 or R2, book a strategy call now to see if we&apos;re a fit.
             </p>
             <Link
               href="#strategy-call"
               className="btn-shine pulse-gold inline-flex items-center px-8 py-3.5 bg-gold hover:bg-gold-dark text-white font-semibold rounded-lg transition-colors"
             >
-              Claim a Launch Spot
+              Check Availability
             </Link>
           </AnimateIn>
         </div>
