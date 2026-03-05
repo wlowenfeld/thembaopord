@@ -63,7 +63,7 @@ export default function EmailCapture({
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="your.email@military.mil"
+              placeholder="your@email.com"
               className="flex-1 px-4 py-3 rounded-md border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
             />
             <button
@@ -92,7 +92,7 @@ export default function EmailCapture({
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="your.email@military.mil"
+          placeholder="your@email.com"
           className="w-full px-4 py-3 rounded-md border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
         />
         <button
