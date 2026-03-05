@@ -28,8 +28,8 @@ export default function Home() {
               </AnimateIn>
               <AnimateIn delay={100}>
                 <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.08] mb-6 tracking-tight">
-                  The military gave you a playbook for everything —{" "}
-                  <span className="text-gold whitespace-nowrap">except what comes next.</span>
+                  The military gave you a playbook for everything{" "}
+                  <span className="text-gold whitespace-nowrap">— except what comes next.</span>
                 </h1>
               </AnimateIn>
               <AnimateIn delay={200}>
