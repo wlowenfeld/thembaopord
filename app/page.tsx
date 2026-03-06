@@ -20,9 +20,9 @@ export default function Home() {
 
         <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="grid md:grid-cols-12 gap-8 items-end">
-            <div className="md:col-span-7">
+            <div className="md:col-span-7 text-center md:text-left">
               <AnimateIn delay={0} direction="none">
-                <p className="text-gold/80 text-xs uppercase tracking-[0.3em] mb-8 font-medium">
+                <p className="text-gold text-xs uppercase tracking-[0.3em] mb-8 font-medium">
                   For Military Officers Pursuing an MBA
                 </p>
               </AnimateIn>
@@ -32,12 +32,12 @@ export default function Home() {
                 </h1>
               </AnimateIn>
               <AnimateIn delay={200}>
-                <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-12">
+                <p className="text-gray-300 text-lg leading-relaxed max-w-lg mx-auto md:mx-0 mb-12">
                   Every MBA admissions resource assumes you&apos;re a consultant or a banker. You&apos;re not. You need a guide and a gameplan built by someone who made the same transition you&apos;re about to make.
                 </p>
               </AnimateIn>
               <AnimateIn delay={300}>
-                <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
                   <Link
                     href="/coaching#strategy-call"
                     className="pulse-cta group inline-flex items-center gap-3 px-8 py-4 bg-cta hover:bg-cta-dark text-white font-semibold rounded-lg transition-all shadow-lg shadow-cta/20"
@@ -47,7 +47,7 @@ export default function Home() {
                   </Link>
                   <Link
                     href="/book"
-                    className="inline-flex items-center px-8 py-4 text-white/70 hover:text-white font-medium transition-colors"
+                    className="inline-flex items-center px-8 py-4 text-white/80 hover:text-white font-medium transition-colors"
                   >
                     Or start with the book
                   </Link>
@@ -65,9 +65,9 @@ export default function Home() {
           </div>
 
           <AnimateIn delay={500} direction="none">
-            <div className="mt-16 pt-8 border-t border-white/10">
-              <p className="text-white/40 text-sm tracking-wide">
-                Written by <span className="text-white/70">Wes Lowenfeld</span> &mdash; NYU Stern MBA &apos;19, U.S. Army veteran
+            <div className="mt-16 pt-8 border-t border-white/10 text-center md:text-left">
+              <p className="text-white/60 text-sm tracking-wide">
+                Written by <span className="text-white/90">Wes Lowenfeld</span> &mdash; NYU Stern MBA &apos;19, U.S. Army veteran
               </p>
             </div>
           </AnimateIn>
@@ -78,7 +78,7 @@ export default function Home() {
           THE PROBLEM — Full-width text, no cards
           ═══════════════════════════════════════════ */}
       <section className="py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
           <AnimateIn>
             <p className="text-gold text-xs uppercase tracking-[0.3em] mb-6 font-medium">The Problem</p>
             <h2 className="font-serif text-3xl sm:text-4xl text-navy leading-snug mb-8" style={{ textWrap: "balance" }}>
@@ -111,26 +111,28 @@ export default function Home() {
       <section className="py-28 bg-cream">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateIn>
-            <p className="text-gold text-xs uppercase tracking-[0.3em] mb-6 font-medium">Two Ways In</p>
-            <h2 className="font-serif text-3xl sm:text-4xl text-navy leading-snug mb-16 max-w-2xl">
-              Whether you want a guide or a partner, I&apos;ve got you.
-            </h2>
+            <div className="text-center md:text-left">
+              <p className="text-gold text-xs uppercase tracking-[0.3em] mb-6 font-medium">Two Ways In</p>
+              <h2 className="font-serif text-3xl sm:text-4xl text-navy leading-snug mb-16 max-w-2xl mx-auto md:mx-0">
+                Whether you want a guide or a partner, I&apos;ve got you.
+              </h2>
+            </div>
           </AnimateIn>
 
           <div className="grid md:grid-cols-12 gap-6">
             <div className="md:col-span-7">
               <AnimateIn delay={100}>
-                <div className="bg-navy rounded-2xl p-10 sm:p-12 h-full relative overflow-hidden">
+                <div className="bg-navy rounded-2xl p-10 sm:p-12 h-full relative overflow-hidden text-center md:text-left">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-cta/5 rounded-full -mr-10 -mt-10" />
                   <p className="text-cta text-xs uppercase tracking-[0.3em] mb-4 font-semibold relative">Recommended</p>
                   <h3 className="font-serif text-3xl sm:text-4xl text-white leading-tight mb-5 relative">
                     1-on-1 Coaching
                   </h3>
-                  <p className="text-gray-300 leading-relaxed mb-6 max-w-md relative">
+                  <p className="text-gray-300 leading-relaxed mb-6 max-w-md mx-auto md:mx-0 relative">
                     School selection. Essay strategy. Interview prep. We work through your entire application
                     together until it&apos;s airtight. You bring the experience &mdash; I help you frame it.
                   </p>
-                  <div className="space-y-3 mb-8 relative">
+                  <div className="space-y-3 mb-8 relative inline-block md:block text-left">
                     {["Free 20-min strategy call to start", "Tailored to your branch, rank & timeline", "Essays, resume, interview \u2014 the full stack"].map((item) => (
                       <div key={item} className="flex items-center gap-3">
                         <div className="w-1.5 h-1.5 rounded-full bg-cta-light shrink-0" />
@@ -138,20 +140,22 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                  <Link
-                    href="/coaching#strategy-call"
-                    className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-cta hover:bg-cta-dark text-white font-semibold rounded-lg transition-all relative shadow-lg shadow-cta/20"
-                  >
-                    Book a Free Call
-                    <span className="inline-block transition-transform group-hover/btn:translate-x-1">&rarr;</span>
-                  </Link>
+                  <div className="relative">
+                    <Link
+                      href="/coaching#strategy-call"
+                      className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-cta hover:bg-cta-dark text-white font-semibold rounded-lg transition-all shadow-lg shadow-cta/20"
+                    >
+                      Book a Free Call
+                      <span className="inline-block transition-transform group-hover/btn:translate-x-1">&rarr;</span>
+                    </Link>
+                  </div>
                 </div>
               </AnimateIn>
             </div>
 
             <div className="md:col-span-5">
               <AnimateIn delay={200}>
-                <div className="bg-white border border-gray-200 rounded-2xl p-10 sm:p-12 h-full flex flex-col">
+                <div className="bg-white border border-gray-200 rounded-2xl p-10 sm:p-12 h-full flex flex-col text-center md:text-left">
                   <p className="text-gold text-xs uppercase tracking-[0.3em] mb-4 font-medium">Self-Guided</p>
                   <h3 className="font-serif text-3xl text-navy leading-tight mb-5">
                     The Book
@@ -188,10 +192,12 @@ export default function Home() {
       <section id="how-it-works" className="py-28 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateIn>
-            <p className="text-gold text-xs uppercase tracking-[0.3em] mb-6 font-medium">How It Works</p>
-            <h2 className="font-serif text-3xl sm:text-4xl text-navy leading-snug mb-16 max-w-xl">
-              Three steps. No ambiguity.
-            </h2>
+            <div className="text-center md:text-left">
+              <p className="text-gold text-xs uppercase tracking-[0.3em] mb-6 font-medium">How It Works</p>
+              <h2 className="font-serif text-3xl sm:text-4xl text-navy leading-snug mb-16 max-w-xl mx-auto md:mx-0">
+                Three steps. No ambiguity.
+              </h2>
+            </div>
           </AnimateIn>
 
           <div className="space-y-0">
@@ -213,7 +219,7 @@ export default function Home() {
               },
             ].map((item, i) => (
               <AnimateIn key={i} delay={i * 100}>
-                <div className="grid md:grid-cols-12 gap-6 py-10 border-b border-gray-100 last:border-0 items-baseline">
+                <div className="grid md:grid-cols-12 gap-6 py-10 border-b border-gray-100 last:border-0 items-baseline text-center md:text-left">
                   <div className="md:col-span-1">
                     <span className="font-serif text-5xl text-navy/15 font-light">{item.num}</span>
                   </div>
@@ -229,7 +235,7 @@ export default function Home() {
           </div>
 
           <AnimateIn delay={350}>
-            <div className="mt-14">
+            <div className="mt-14 text-center md:text-left">
               <Link
                 href="/coaching#strategy-call"
                 className="group inline-flex items-center gap-3 px-10 py-4 bg-cta hover:bg-cta-dark text-white font-semibold rounded-lg transition-all text-lg shadow-lg shadow-cta/15"
@@ -247,7 +253,7 @@ export default function Home() {
           ABOUT / CREDIBILITY — A story, not stats
           ═══════════════════════════════════════════ */}
       <section className="py-28 bg-cream">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
           <AnimateIn>
             <p className="text-gold text-xs uppercase tracking-[0.3em] mb-6 font-medium">Who&apos;s Behind This</p>
             <h2 className="font-serif text-3xl sm:text-4xl text-navy leading-snug mb-8">
@@ -313,9 +319,9 @@ export default function Home() {
             <h2 className="font-serif text-3xl sm:text-[2.75rem] text-white leading-tight mb-6">
               A 20-minute call costs you nothing.
               <br />
-              <span className="text-gray-400">Guessing costs you a year.</span>
+              <span className="text-gray-300">Guessing costs you a year.</span>
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto">
               Whether you&apos;re 18 months out or submitting next month, the call is free and the
               advice is specific to your situation.
             </p>
